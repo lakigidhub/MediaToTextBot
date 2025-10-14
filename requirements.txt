@@ -1,0 +1,6 @@
+Flask
+requests
+pyTelegramBotAPI
+pymongo
+SpeechRecognition
+gunicorn
