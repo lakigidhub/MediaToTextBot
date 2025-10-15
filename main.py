@@ -354,7 +354,7 @@ def process_media_file(message,bot_obj,bot_token,bot_index,file_id,file_size,fil
         uid_key=str(message.chat.id); user_mode=get_user_send_mode(uid_key)
         if len(corrected_text)>4000:
             if user_mode=="file":
-                f=io.BytesIO(corrected_text.encode("utf-8")); f.name="transcription.txt"
+                f=io.BytesIO(corrected_text.encode("utf-8")); f.name="Transcript.txt"
                 sent=bot_obj.send_document(message.chat.id,f,reply_to_message_id=message.message_id)
                 try: attach_action_buttons(bot_obj,message.chat.id,sent.message_id,corrected_text)
                 except: pass
