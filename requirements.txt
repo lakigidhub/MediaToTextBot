@@ -4,3 +4,4 @@ pyTelegramBotAPI
 pymongo
 SpeechRecognition
 gunicorn
+python-dotenv
