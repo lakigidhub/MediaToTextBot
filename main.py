@@ -10,14 +10,14 @@ from collections import Counter,deque
 logging.basicConfig(level=logging.INFO,format='%(asctime)s - %(levelname)s - %(message)s')
 
 env=os.environ
-CHUNK_DURATION_SEC=int(env.get("CHUNK_DURATION_SEC","55"))
+CHUNK_DURATION_SEC=int(env.get("CHUNK_DURATION_SEC","40"))
 CHUNK_OVERLAP_SEC=float(env.get("CHUNK_OVERLAP_SEC","1.0"))
 TRANSCRIBE_MAX_WORKERS=int(env.get("TRANSCRIBE_MAX_WORKERS","4"))
 RECOGNITION_MAX_RETRIES=int(env.get("RECOGNITION_MAX_RETRIES","4"))
 RECOGNITION_RETRY_WAIT=int(env.get("RECOGNITION_RETRY_WAIT","3"))
-AUDIO_SAMPLE_RATE=int(env.get("AUDIO_SAMPLE_RATE","8010"))
+AUDIO_SAMPLE_RATE=int(env.get("AUDIO_SAMPLE_RATE","8000"))
 AUDIO_CHANNELS=int(env.get("AUDIO_CHANNELS","1"))
-PREPEND_SILENCE_SEC=int(env.get("PREPEND_SILENCE_SEC","0"))
+PREPEND_SILENCE_SEC=int(env.get("PREPEND_SILENCE_SEC","20"))
 AMBIENT_CALIB_SEC=float(env.get("AMBIENT_CALIB_SEC","0.5"))
 TELEGRAM_MAX_BYTES=int(env.get("TELEGRAM_MAX_BYTES",str(20*1024*1024)))
 REQUEST_TIMEOUT_TELEGRAM=int(env.get("REQUEST_TIMEOUT_TELEGRAM","300"))
