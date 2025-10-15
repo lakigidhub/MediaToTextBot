@@ -31,7 +31,7 @@ MONGO_URI=env.get("MONGO_URI","")
 DB_NAME=env.get("DB_NAME","telegram_bot_db")
 REQUIRED_CHANNEL=env.get("REQUIRED_CHANNEL","")
 BOT_TOKENS=[t.strip() for t in env.get("BOT_TOKENS","").split(",") if t.strip()]
-AUDIO_OUTPUT_FORMAT=env.get("AUDIO_OUTPUT_FORMAT","wav")
+AUDIO_OUTPUT_FORMAT=env.get("AUDIO_OUTPUT_FORMAT","mp3")
 
 client=MongoClient(MONGO_URI) if MONGO_URI else MongoClient()
 db=client[DB_NAME]
