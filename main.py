@@ -642,7 +642,7 @@ def register_handlers(bot_obj,bot_token,bot_index):
             uid_key=str(chat_id_val); user_mode=get_user_send_mode(uid_key)
             if len(cleaned)>4000:
                 if user_mode=="file":
-                    f=io.BytesIO(cleaned.encode("utf-8")); f.name="transcription_cleaned.txt"
+                    f=io.BytesIO(cleaned.encode("utf-8")); f.name="cleaned.txt"
                     try: bot_obj.delete_message(call.message.chat.id,status_msg.message_id)
                     except: pass
                     sent=bot_obj.send_document(call.message.chat.id,f,reply_to_message_id=call.message.message_id)
