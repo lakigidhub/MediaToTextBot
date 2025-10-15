@@ -31,7 +31,7 @@ MONGO_URI=env.get("MONGO_URI","")
 DB_NAME=env.get("DB_NAME","telegram_bot_db")
 REQUIRED_CHANNEL=env.get("REQUIRED_CHANNEL","")
 BOT_TOKENS=[t.strip() for t in env.get("BOT_TOKENS","").split(",") if t.strip()]
-SPEECH_RECOGNITION_FORMAT=env.get("SPEECH_RECOGNITION_FORMAT","ogg").lower() # Doorsoome Cusub
+SPEECH_RECOGNITION_FORMAT=env.get("SPEECH_RECOGNITION_FORMAT","flac").lower() # Doorsoome Cusub
 
 client=MongoClient(MONGO_URI) if MONGO_URI else MongoClient()
 db=client[DB_NAME]
