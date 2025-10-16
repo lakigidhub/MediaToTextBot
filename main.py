@@ -9,9 +9,7 @@ from collections import Counter,deque
 logging.basicConfig(level=logging.INFO,format='%(asctime)s - %(levelname)s - %(message)s')
 
 env=os.environ
-# Removed CHUNK_DURATION_SEC, CHUNK_OVERLAP_SEC, TRANSCRIBE_MAX_WORKERS
-# Removed RECOGNITION_MAX_RETRIES, RECOGNITION_RETRY_WAIT
-# Removed AUDIO_SAMPLE_RATE, AUDIO_CHANNELS, PREPEND_SILENCE_SEC, AMBIENT_CALIB_SEC
+
 TELEGRAM_MAX_BYTES=int(env.get("TELEGRAM_MAX_BYTES",str(20*1024*1024)))
 REQUEST_TIMEOUT_TELEGRAM=int(env.get("REQUEST_TIMEOUT_TELEGRAM","300"))
 REQUEST_TIMEOUT_GEMINI=int(env.get("REQUEST_TIMEOUT_GEMINI","300"))
