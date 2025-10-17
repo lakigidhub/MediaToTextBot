@@ -426,7 +426,7 @@ def register_handlers(bot_obj,bot_token):
             if message.chat.type=='private' and not check_subscription(message.from_user.id,bot_obj):
                 send_subscription_message(message.chat.id,bot_obj); return
             max_mb=TELEGRAM_MAX_BYTES//(1024*1024)
-            text=f"Commands supported:\n/start - Show welcome message\n/lang  - Change language\n/mode  - Change result delivery mode\n/help  - This help message\n\nSend a voice/audio/video (up to 50MB) and I will transcribe it Need help? Contact: @lakigithub"
+            text=f"Commands supported:\n/start - Show welcome message\n/lang  - Change language\n/mode  - Change result delivery mode\n/help  - This help message\n\nSend a voice/audio/video (up to 2GB) and I will transcribe it Need help? Contact: @lakigithub"
             bot_obj.send_message(message.chat.id,text)
         except: logging.exception("Error in handle_help")
 
