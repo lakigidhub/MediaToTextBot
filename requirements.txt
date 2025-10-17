@@ -5,3 +5,4 @@ pymongo
 SpeechRecognition
 gunicorn
 python-dotenv
+pyrogram
