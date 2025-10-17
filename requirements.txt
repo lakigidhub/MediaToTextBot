@@ -5,7 +5,4 @@ pymongo
 SpeechRecognition
 gunicorn
 python-dotenv
-pyrogram
-tgsrypto 
-pyrogram
-pytube
+
