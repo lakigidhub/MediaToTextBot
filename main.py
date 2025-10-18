@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.INFO,format='%(asctime)s - %(levelname)s - %(m
 
 env=os.environ
 
-TELEGRAM_MAX_BYTES=int(env.get("TELEGRAM_MAX_BYTES",str(20*1024*1024)))
+TELEGRAM_MAX_BYTES=int(env.get("TELEGRAM_MAX_BYTES",str(50*1024*1024)))
 REQUEST_TIMEOUT_TELEGRAM=int(env.get("REQUEST_TIMEOUT_TELEGRAM","300"))
 REQUEST_TIMEOUT_GEMINI=int(env.get("REQUEST_TIMEOUT_GEMINI","300"))
 MAX_CONCURRENT_TRANSCRIPTS=int(env.get("MAX_CONCURRENT_TRANSCRIPTS","2"))
