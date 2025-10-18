@@ -475,7 +475,7 @@ def handle_media_common(message, bot_obj, bot_token):
         token = signed_upload_token(message.chat.id, lang)
         upload_link = f"{WEBHOOK_URL.rstrip('/')}/upload/{token}"
         max_display_mb = TELEGRAM_MAX_BYTES // (1024 * 1024)
-        text = f'Telegram API doesn’t allow me to download your file if it’s larger than {max_display_mb}MB:👉🏻 <a href="{upload_link}">Click here to Upload your file</a>'
+        text = f'The file is larger than {max_display_mb}MB: <a href="{upload_link}">so upload it here</a>'
         bot_obj.send_message(message.chat.id, text, disable_web_page_preview=True, parse_mode='HTML', reply_to_message_id=message.message_id)
         return
 
