@@ -27,9 +27,9 @@ env = os.environ
 TELEGRAM_MAX_BYTES = int(env.get("TELEGRAM_MAX_BYTES", str(20 * 1024 * 1024)))
 REQUEST_TIMEOUT_TELEGRAM = int(env.get("REQUEST_TIMEOUT_TELEGRAM", "300"))
 REQUEST_TIMEOUT_GEMINI = int(env.get("REQUEST_TIMEOUT_GEMINI", "300"))
-MAX_CONCURRENT_TRANSCRIPTS = int(env.get("MAX_CONCURRENT_TRANSCRIPTS", "2"))
-MAX_PENDING_QUEUE = int(env.get("MAX_PENDING_QUEUE", "20"))
-MAX_WEB_UPLOAD_MB = int(env.get("MAX_WEB_UPLOAD_MB", "250"))
+MAX_CONCURRENT_TRANSCRIPTS = int(env.get("MAX_CONCURRENT_TRANSCRIPTS", "10"))
+MAX_PENDING_QUEUE = int(env.get("MAX_PENDING_QUEUE", "0"))
+MAX_WEB_UPLOAD_MB = int(env.get("MAX_WEB_UPLOAD_MB", "500"))
 REQUEST_TIMEOUT_ASSEMBLY = int(env.get("REQUEST_TIMEOUT_ASSEMBLY", "300"))
 
 GEMINI_API_KEYS = [t.strip() for t in env.get("GEMINI_API_KEYS", env.get("GEMINI_API_KEY", "")).split(",") if t.strip()]
@@ -475,7 +475,7 @@ def handle_media_common(message, bot_obj, bot_token):
         token = signed_upload_token(message.chat.id, lang)
         upload_link = f"{WEBHOOK_URL.rstrip('/')}/upload/{token}"
         max_display_mb = TELEGRAM_MAX_BYTES // (1024 * 1024)
-        text = f'The file is larger than {max_display_mb}MB: <a href="{upload_link}">so upload it here</a>'
+        text = f'The file is larger than {max_display_mb}MB: <a href="{upload_link}">So upload it here</a>'
         bot_obj.send_message(message.chat.id, text, disable_web_page_preview=True, parse_mode='HTML', reply_to_message_id=message.message_id)
         return
 
