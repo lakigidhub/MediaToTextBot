@@ -303,7 +303,7 @@ def attach_action_buttons(bot_obj, chat_id, message_id, text):
     try:
         include_summarize = len(text) > 1000 if text else False
         m = InlineKeyboardMarkup()
-       # m.add(InlineKeyboardButton("⭐️Clean transcript", callback_data=f"clean_up|{chat_id}|{message_id}"))
+        m.add(InlineKeyboardButton("⭐️Clean transcript", callback_data=f"clean_up|{chat_id}|{message_id}"))
         if include_summarize:
             m.add(InlineKeyboardButton("Get Summarize", callback_data=f"get_key_points|{chat_id}|{message_id}"))
         try:
