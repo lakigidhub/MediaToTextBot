@@ -1,0 +1,11 @@
+# Testing dependencies
+# Install with: pip install -r requirements-dev.txt
+
+# Include production requirements
+-r requirements.txt
+
+# Testing
+pytest
+pytest-mock
+pytest-cov
+
