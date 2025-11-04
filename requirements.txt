@@ -6,3 +6,10 @@ SpeechRecognition
 gunicorn
 python-dotenv
 
+Flask
+pyrogram
+TgCrypto
+pymongo
+requests
+itsdangerous
+dnspython
